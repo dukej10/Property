@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './general/page-not-found/page-not-found.c
 import { ClientRoutingModule } from './client/client-routing.module';
 import { ProductModule } from './product/product.module';
 import { ProductRoutingModule } from './product/product-routing.module';
+import { ContactoComponent } from './general/contacto/contacto.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,15 @@ const routes: Routes = [
     path: 'security',
     loadChildren: './security/security.module#SecurityModule' 
   }, 
+
+  {
+    path: 'contacto',
+    component: ContactoComponent
+  },
+  {
+    path: 'contact',
+    component: ContactoComponent
+  },
 
   {
     path: '**',
