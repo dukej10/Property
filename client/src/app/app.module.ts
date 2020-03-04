@@ -8,13 +8,15 @@ import { SecurityModule } from './security/security.module';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { HeroComponent } from './template/hero/hero.component';
+import { HomeComponent } from './template/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     NavbarComponent,
-    HeroComponent
+    HeroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
