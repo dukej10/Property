@@ -31,12 +31,12 @@ const routes: Routes = [
 
   },
   {
-    path: '/product/home',
+    path: 'product/home',
     component: ProductHomeComponent
 
   },
   {
-    path: '/product/detalles',
+    path: 'product/detalles',
     component: ProductDetailsComponent
 
   }

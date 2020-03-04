@@ -4,10 +4,13 @@ import { GeneralModule } from './general/general.module';
 import { HomeComponent } from './general/home/home.component';
 import { DireccionesComponent } from './general/direcciones/direcciones.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
-import { ClientRoutingModule } from './client/client-routing.module';
+import { ClientModule } from './client/client.module';
 import { ProductModule } from './product/product.module';
 import { ProductRoutingModule } from './product/product-routing.module';
 import { ContactoComponent } from './general/contacto/contacto.component';
+import { ParametersModule } from './parameters/parameters.module';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { ClientRoutingModule } from './client/client-routing.module';
 
 
 const routes: Routes = [
@@ -57,7 +60,9 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes),
   GeneralModule,
+  ClientModule,
   ClientRoutingModule,
+  ParametersModule,
   ProductRoutingModule
 ],
   exports: [RouterModule]

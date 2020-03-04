@@ -5,9 +5,10 @@ import { SecurityRoutingModule } from './security-routing.module';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [LoginComponent, LogoutComponent],
+  declarations: [LoginComponent, LogoutComponent, RegisterComponent],
   imports: [
     CommonModule,
     SecurityRoutingModule,
@@ -16,7 +17,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   exports:[
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegisterComponent
   ]
 })
 export class SecurityModule { }
