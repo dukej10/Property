@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './admin/product-list/product-list.component';
 import { ProductCreatorComponent } from './product-creator/product-creator.component';
 import { ProductEditorComponent } from './product-editor/product-editor.component';
 import { ProductHomeComponent } from './product-home/product-home.component';
