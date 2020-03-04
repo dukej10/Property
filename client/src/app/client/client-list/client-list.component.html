@@ -1,0 +1,29 @@
+<div><h4 align="center">Lista Clientes Actuales</h4></div>
+<a href="/client/creator" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar Cliente</a>
+<table class="highlight responsive-table">
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Editar</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of clientListData"> <!-- copiando json -->
+        <td>{{c._id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.age}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.phone}}</td>
+        <!-- <td>{{c.balance | currency}}</td> -->
+        <td>
+          <!-- Al dar click al botón redirecciona y envía con el indice del cliente seleccionado -->
+          <a href="/client/editor/{{c.index}}" class="waves-effect waves-light btn"><i class="material-icons right">edit</i>Editar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

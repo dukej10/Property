@@ -1,0 +1,55 @@
+import { NgModule, Component } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { GeneralModule } from './general/general.module';
+import { HomeComponent } from './general/home/home.component';
+import { DireccionesComponent } from './general/direcciones/direcciones.component';
+import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
+import { ClientRoutingModule } from './client/client-routing.module';
+import { ProductModule } from './product/product.module';
+import { ProductRoutingModule } from './product/product-routing.module';
+
+
+const routes: Routes = [
+  /* Home */
+  {
+    path: 'home',
+  component: HomeComponent
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/home'
+  },
+
+  /* Misión y Visión */
+  {
+    path: 'direc',
+  component: DireccionesComponent
+  },
+  {
+    path: 'dir',
+  component: DireccionesComponent
+  },
+
+  /* Direccionamiento Seguridad */
+  {
+    path: 'security',
+    loadChildren: './security/security.module#SecurityModule' 
+  }, 
+
+  {
+    path: '**',
+  component: PageNotFoundComponent
+  }
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes),
+  GeneralModule,
+  ClientRoutingModule,
+  ProductRoutingModule
+],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
