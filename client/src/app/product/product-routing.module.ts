@@ -20,11 +20,11 @@ const routes: Routes = [
     component: ProductEditorComponent
 
   },
-  {
+  /* {
     path: 'product',
     pathMatch: 'full',
     redirectTo: '/product/list'
-  },
+  }, */
   {
     path: 'admin/product/creator',
     component: ProductCreatorComponent
