@@ -13,10 +13,9 @@
     },
     "name": {
       "type": "string",
-      "required": true,
-      "default": "description"
+      "required": true
     },
-    "description": {
+    "trequest": {
       "type": "string",
       "required": true
     }

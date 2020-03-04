@@ -15,10 +15,25 @@
       "type": "string",
       "required": true
     },
+
+    "available":{
+      "type": "boolean",
+      "required": true
+    },
+    "rooms": {
+      "type": "number",
+      "required": true
+    },
+    "bathrooms": {
+      "type": "number",
+      "required": true
+    },
+    "area": {
+      "type": "number",
+      "required": true
+    },
     "category": {
-      "type": [
-        "string"
-      ],
+      "type": "string",
       "required": true
     },
     "price": {
@@ -33,11 +48,12 @@
       "type": "string",
       "required": true
     },
-    "address": {
+    "image1": {
       "type": "string",
       "required": true
     },
-    "trequest": {
+    
+    "address": {
       "type": "string",
       "required": true
     }
