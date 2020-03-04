@@ -12,6 +12,11 @@ import { CategoryEditorComponent } from './category/category-editor/category-edi
   imports: [
     CommonModule,
     ParametersRoutingModule
+  ],
+  exports:[
+    CategoryCreatorComponent,
+    CategoryEditorComponent,
+    CategoryListComponent
   ]
 })
 export class ParametersModule { }
