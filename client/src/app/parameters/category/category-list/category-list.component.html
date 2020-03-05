@@ -1,1 +1,44 @@
-<p>category-list works!</p>
+<br>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Code
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Tipo de solicitud
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+        <tr *ngFor="let c of categoryList">
+            <td>
+                {{c.code}}
+            </td>
+            <td>
+                {{c.name}}
+            </td>
+            <td>
+                {{c.trequest}}
+            </td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>            
+        </tr>
+    <tbody>
+
+    </tbody>
+</table>
