@@ -63,7 +63,8 @@ const routes: Routes = [
   ClientModule,
   ClientRoutingModule,
   ParametersModule,
-  ProductRoutingModule
+  ProductRoutingModule,
+  
 ],
   exports: [RouterModule]
 })
