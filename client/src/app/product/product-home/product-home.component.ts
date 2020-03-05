@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PropertyModel } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/product.service';
+
+
 
 @Component({
   selector: 'app-product-home',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pdtService: ProductService) {   }
 
-  ngOnInit(): void {
+  productList: PropertyModel[] = [];
+
+  ngOnInit(){
+    this.getAllProducts(); 
+  }
+
+  getAllProducts():void{
+    this.pdtService.getAllProducts().subscribe(items => {
+      this.productList = items;
+    });
   }
 
 }

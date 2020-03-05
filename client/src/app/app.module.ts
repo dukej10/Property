@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { HeroComponent } from './template/hero/hero.component';
 import { HomeComponent } from './template/home/home.component';
+import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HomeComponent } from './template/home/home.component';
     BrowserModule,
     AppRoutingModule,
     SecurityModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

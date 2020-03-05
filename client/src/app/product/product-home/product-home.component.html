@@ -1,62 +1,19 @@
 <br>
 <br>
 <div class="row s12">
-    <div class="card col s6">
+    <div *ngFor="let p of productList" class="card col s4">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://i.pinimg.com/originals/5d/7e/80/5d7e8095de543443153a701d2926710f.jpg">
+          <img class="activator" src="{{p.image}}">
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
+          <span class="card-title activator grey-text text-darken-4">{{p.name}}<i class="material-icons right">more_vert</i></span>
+          <p><a routerLink="/product/detalles">Detalles</a></p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <span class="card-title grey-text text-darken-4">{{p.name}}<i class="material-icons right">close</i></span>
+          <p>{{p.price | currency}}</p>
         </div>
-      </div>
-
-      <div class="card col s6">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://i.pinimg.com/originals/5d/7e/80/5d7e8095de543443153a701d2926710f.jpg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-
-      <div class="card col s6">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://i.pinimg.com/originals/5d/7e/80/5d7e8095de543443153a701d2926710f.jpg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-
-      <div class="card col s6">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://i.pinimg.com/originals/5d/7e/80/5d7e8095de543443153a701d2926710f.jpg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-
-      
+        <h1>{{p.name}}</h1>
+      </div>      
 </div>
 
