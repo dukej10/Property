@@ -20,4 +20,29 @@ export class ProductService {
 
   }
 
+  getProductById(productId: string): Observable<PropertyModel>{
+    return this.http.get<PropertyModel>(`${base_url}properties/${productId}`);
+  }
+
+  saveNewProduct(product: PropertyModel): Observable<PropertyModel>{
+    return this.http.post<PropertyModel>(`${base_url}properties`, product, {
+      headers: new HttpHeaders({
+        "content-type": "aplication/json"
+      })
+    });
+  }
+
+  updateProduct(product: PropertyModel): Observable<PropertyModel>{
+    return this.http.put<PropertyModel>(`${base_url}properties`, product, {
+      headers: new HttpHeaders({
+        "content-type": "aplication/json"
+      })
+    });
+  }
+
+  deleteProduct(productId: string): Observable<PropertyModel>{
+    return this.http.delete<PropertyModel>(`${base_url}properties/productId`)
+    };
+  }
+
 }
