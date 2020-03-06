@@ -1,2 +1,90 @@
 <br>
-<p>product-list works!</p>
+<br>
+<br>
+<a href="/admin/product/creator" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar Categoria</a>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Code
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Hab.
+            </th>
+            <th>
+                Baños
+            </th>
+            <th>
+                Área m<sup>2</sup>
+            </th>
+            <th>
+                Valor ($)
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+               
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+        <tr *ngFor="let c of productList">
+            <td>
+                {{c.code}}
+            </td>
+            <td>
+                {{c.name}}
+            </td>
+            <td>
+                {{c.rooms}}
+            </td>
+            <td>
+                {{c.bathrooms}}
+            </td>
+            <td>
+                {{c.area}}
+            </td>
+            <td>
+                {{c.price}}
+            </td>
+            <td>
+                {{c.description}}
+            </td>
+            <td>
+                {{c.address}}
+            </td>
+
+            <td>
+                <a class="waves-effect waves-light btn blue" href="/admin/product/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
+            </td>
+            <td>
+                <a *ngIf="!showConfirmationsButtons; else deleteConfirmation" (click)="ChangeConfirmationButtons(c.id)" class="waves-effect waves-light btn red"><i class="material-icons right">delete</i>Eliminar</a>
+                <ng-template #deleteConfirmation>
+                <div *ngIf="idToShowButtons == c.id"> <!-- Sólo mostrará las opciones para el seleccionado -->
+                    <a class="waves-effect waves-light btn green" (click)="deleteProduct(c.id)"><i class="material-icons right">done</i>Confirmar</a>&nbsp;&nbsp;
+                    <a class="waves-effect waves-light btn red" (click)="ChangeConfirmationButtons('')"><i class="material-icons right">cancel</i>Cancelar</a>
+                </div>
+            </ng-template>
+            </td>            
+        </tr>
+    <tbody>
+
+    </tbody>
+</table>
+
+<!-- Modal Message -->
+<!-- <div id="deletePMessageModal" class="modal">
+    <div class="modal-content">
+      <h4>Inmueble Eliminado</h4>
+      <strong id="strDeletePMessage"></strong>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div> -->
