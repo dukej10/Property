@@ -23,3 +23,9 @@ function saveMessageModal(message){
   document.querySelector("#strSaveCMessage").innerHTML = message;
   instance.open();
 }
+function deleteMessageModalP(message){
+  let elem = document.querySelector("#deletePMessageModal");
+  let instance = M.Modal.getInstance(elem);
+  document.querySelector("#strDeletePMessage").innerHTML = message;
+  instance.open();
+}
