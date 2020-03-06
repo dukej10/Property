@@ -16,3 +16,10 @@ function deleteMessageModal(message){
   document.querySelector("#strDeleteCMessage").innerHTML = message;
   instance.open();
 }
+
+function saveMessageModal(message){
+  let elem = document.querySelector("#saveCMessageModal");
+  let instance = M.Modal.getInstance(elem);
+  document.querySelector("#strSaveCMessage").innerHTML = message;
+  instance.open();
+}
