@@ -7,7 +7,7 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 
 const routes: Routes = [
   {
-    path: 'admin/category/editor',
+    path: 'admin/category/creator',
     component: CategoryCreatorComponent
 
   },
