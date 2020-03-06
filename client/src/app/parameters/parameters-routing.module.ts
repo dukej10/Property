@@ -12,7 +12,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'admin/category/editor',
+    path: 'admin/category/editor/:id',
     component: CategoryEditorComponent
 
   },
