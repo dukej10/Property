@@ -15,7 +15,6 @@ export class ProductService {
   constructor(private http: HttpClient) {
 
   }
-
   getAllProducts():Observable<PropertyModel[]>{
     return this.http.get<PropertyModel[]>(`${base_url}properties`);
 
