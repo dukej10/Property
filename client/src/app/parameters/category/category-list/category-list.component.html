@@ -1,6 +1,7 @@
 <br>
 <br>
 <br>
+<a routerLink="/admin/category/creator" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Agregar Categoria</a>
 <table>
     <thead>
         <tr>
@@ -32,7 +33,7 @@
                 {{c.trequest}}
             </td>
             <td>
-                <a class="waves-effect waves-light btn blue"><i class="material-icons right">edit</i>Editar</a>
+                <a class="waves-effect waves-light btn blue" routerLink="/admin/category/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
             </td>
             <td>
                 <a *ngIf="!showConfirmationsButtons; else deleteConfirmation" (click)="ChangeConfirmationButtons(c.id)" class="waves-effect waves-light btn red"><i class="material-icons right">delete</i>Eliminar</a>
@@ -48,9 +49,10 @@
 
     </tbody>
 </table>
+<!-- Modal Message -->
 <div id="deleteCMessageModal" class="modal">
     <div class="modal-content">
-      <h4>Categoría Eliminada</h4>
+      <h4>Categoría Creada</h4>
       <strong id="strDeleteCMessage"></strong>
     </div>
     <div class="modal-footer">
