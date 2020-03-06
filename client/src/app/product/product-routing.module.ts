@@ -39,6 +39,16 @@ const routes: Routes = [
     path: 'product/detalles/:id',
     component: ProductDetailsComponent
 
+  },
+  {
+    path: 'admin/product/list',
+    component: ProductListComponent
+
+  },
+  {
+    path: 'admin/product/editor/:id',
+    component: ProductEditorComponent
+
   }
 ];
 
