@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
+import { CategoryModel } from 'src/app/models/category.model';
+import { ProductModule } from 'src/app/product/product.module';
+import { PropertyModel } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product-editor',
@@ -7,9 +12,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductEditorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pService: ProductService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.searchProduct();
+  }
+
+  product: PropertyModel = {
+    id: null,
+    code: null,
+    name: null,
+    available: null,
+    rooms: null,
+    bathrooms: null,
+    area: null,
+    category: null,
+    price: null,
+    description: null,
+    image: null,
+    image1: null,
+    address: null
+  };
+
+  searchProduct():void{
+    let id = this.route.snapshot.params["id"];
+    this.pService.getProductById(id).subscribe(item => {
+      this.product = item;
+    })
+  }
+
+  updateProduct(){
+    this.pService.updateProduct(this.product).subscribe(item => {
+      alert("Se actualizó")
+      this.router.navigate(["/admin/category/list"]);
+    });
   }
 
 }
