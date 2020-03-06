@@ -1,5 +1,5 @@
 import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule} from '@angular/router';
 import { GeneralModule } from './general/general.module';
 import { HomeComponent } from './general/home/home.component';
 import { DireccionesComponent } from './general/direcciones/direcciones.component';
@@ -63,7 +63,7 @@ const routes: Routes = [
   ClientModule,
   ClientRoutingModule,
   ParametersModule,
-  ProductRoutingModule,
+  ProductRoutingModule
   
 ],
   exports: [RouterModule]
