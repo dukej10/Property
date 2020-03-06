@@ -15,16 +15,16 @@ export class CategoryService {
   }
 
   getAllCategories():Observable<CategoryModel[]>{
-    return this.http.get<CategoryModel[]>(`${base_url}categories`);
+    return this.http.get<CategoryModel[]>(`${base_url}Categories`);
 
   }
 
   getCategoryById(CategoryId: string): Observable<CategoryModel>{
-    return this.http.get<CategoryModel>(`${base_url}categories/${CategoryId}`);
+    return this.http.get<CategoryModel>(`${base_url}Categories/${CategoryId}`);
   }
 
   saveNewCategory(Category: CategoryModel): Observable<CategoryModel>{
-    return this.http.post<CategoryModel>(`${base_url}categories`, Category, {
+    return this.http.post<CategoryModel>(`${base_url}Categories`, Category, {
       headers: new HttpHeaders({
         "content-type": "aplication/json"
       })
@@ -32,7 +32,7 @@ export class CategoryService {
   }
 
   updateCategory(Category: CategoryModel): Observable<CategoryModel>{
-    return this.http.put<CategoryModel>(`${base_url}categories`, Category, {
+    return this.http.put<CategoryModel>(`${base_url}Categories`, Category, {
       headers: new HttpHeaders({
         "content-type": "aplication/json"
       })
@@ -40,7 +40,7 @@ export class CategoryService {
   }
 
   deleteCategory(CategoryId: string): Observable<CategoryModel>{
-    return this.http.delete<CategoryModel>(`${base_url}categories/${CategoryId}`)
+    return this.http.delete<CategoryModel>(`${base_url}Categories/${CategoryId}`)
     };
   }
 
