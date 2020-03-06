@@ -5,13 +5,15 @@ import { ParametersRoutingModule } from './parameters-routing.module';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryCreatorComponent } from './category/category-creator/category-creator.component';
 import { CategoryEditorComponent } from './category/category-editor/category-editor.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [CategoryListComponent, CategoryCreatorComponent, CategoryEditorComponent],
   imports: [
     CommonModule,
-    ParametersRoutingModule
+    ParametersRoutingModule,
+    FormsModule
   ],
   exports:[
     CategoryCreatorComponent,
