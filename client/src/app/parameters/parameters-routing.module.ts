@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CategoryCreatorComponent } from './category/category-creator/category-creator.component';
 import { CategoryEditorComponent } from './category/category-editor/category-editor.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
+import { ProductListComponent } from '../product/admin/admin/product-list/product-list.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     component: CategoryListComponent
 
   }
+  
 ];
 
 @NgModule({
