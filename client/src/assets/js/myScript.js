@@ -9,3 +9,10 @@ function showUpdateMessage(message){
     document.querySelector("#strUpdateMessage").innerHTML = message;
     instance.open();
 }
+
+function deleteMessageModal(message){
+  let elem = document.querySelector("#deleteCMessageModal");
+  let instance = M.Modal.getInstance(elem);
+  document.querySelector("#strDeleteCMessage").innerHTML = message;
+  instance.open();
+}
