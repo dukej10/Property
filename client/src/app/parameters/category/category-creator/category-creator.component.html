@@ -1,1 +1,38 @@
-<p>category-creator works!</p>
+<br>
+<br>
+<br>
+<div class="row">
+<div class= "row">
+    <div class="input-field col s3">
+        <i class="material-icons prefix">account_circle</i>
+              <input [(ngModel)]="category.code" id="code" type="text" class="validate">
+              <label for="code">Code</label>
+      </div>
+      <div class="input-field col s5">
+        <i class="material-icons prefix">account_circle</i>
+      <input [(ngModel)]="category.name" id="name" type="text" class="validate">
+      <label for="name">Name</label>
+</div>
+<div class="row">
+    <div class="input-field col s5">
+        <i class="material-icons prefix">account_circle</i>
+      <input [(ngModel)]="category.trequest" id="trequest" type="text" class="validate">
+      <label for="trequest">Tipo de requerimiento</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <a class="waves-effect waves-light btn" (click)="saveNewCategory()"><i class="material-icons right">save</i>Guardar</a>
+    </div>
+</div>
+</div>
+<!-- Modal Message -->
+<div id="saveCMessageModal" class="modal">
+    <div class="modal-content">
+      <h4>Categoría Eliminada</h4>
+      <strong id="strSaveCMessage"></strong>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
