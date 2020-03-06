@@ -35,14 +35,25 @@
                 <a class="waves-effect waves-light btn blue"><i class="material-icons right">edit</i>Editar</a>
             </td>
             <td>
-                <a class="waves-effect waves-light btn red"><i class="material-icons right">delete</i>Eliminar</a>
-                <div>
-                    <a class="waves-effect waves-light btn green"><i class="material-icons right">done</i>Confirmar</a>
-                    <a class="waves-effect waves-light btn red"><i class="material-icons right">cancel</i>Cancelar</a>
+                <a *ngIf="!showConfirmationsButtons; else deleteConfirmation" (click)="ChangeConfirmationButtons(c.id)" class="waves-effect waves-light btn red"><i class="material-icons right">delete</i>Eliminar</a>
+                <ng-template #deleteConfirmation>
+                <div *ngIf="idToShowButtons == c.id"> <!-- Sólo mostrará las opciones para el seleccionado -->
+                    <a class="waves-effect waves-light btn green" (click)="deleteCategory(c.id)"><i class="material-icons right">done</i>Confirmar</a>&nbsp;&nbsp;
+                    <a class="waves-effect waves-light btn red" (click)="ChangeConfirmationButtons('')"><i class="material-icons right">cancel</i>Cancelar</a>
                 </div>
+            </ng-template>
             </td>            
         </tr>
     <tbody>
 
     </tbody>
 </table>
+<div id="deleteCMessageModal" class="modal">
+    <div class="modal-content">
+      <h4>Categoría Eliminada</h4>
+      <strong id="strDeleteCMessage"></strong>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
