@@ -6,12 +6,14 @@ import { ProductCreatorComponent } from './admin/admin/product-creator/product-c
 import { ProductEditorComponent } from './admin/admin/product-editor/product-editor.component';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [ProductListComponent, ProductCreatorComponent, ProductEditorComponent, ProductHomeComponent, ProductDetailsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:[
     ProductListComponent,

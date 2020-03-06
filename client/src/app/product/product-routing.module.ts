@@ -1,4 +1,4 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductListComponent } from './admin/admin/product-list/product-list.component';
 import { ProductEditorComponent } from './admin/admin/product-editor/product-editor.component';
@@ -6,6 +6,7 @@ import { ProductCreatorComponent } from './admin/admin/product-creator/product-c
 import { ProductModule } from './product.module';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   /* Rutas de producto */
@@ -54,7 +55,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes),
-    ProductModule
+    ProductModule,
+    FormsModule
 ],
   exports: [RouterModule]
 })
