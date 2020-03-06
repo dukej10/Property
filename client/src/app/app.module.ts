@@ -9,7 +9,7 @@ import { NavbarComponent } from './template/navbar/navbar.component';
 import { HeroComponent } from './template/hero/hero.component';
 import { HomeComponent } from './template/home/home.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 @NgModule({
   declarations: [

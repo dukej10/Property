@@ -11,6 +11,8 @@ import { ContactoComponent } from './general/contacto/contacto.component';
 import { ParametersModule } from './parameters/parameters.module';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientRoutingModule } from './client/client-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpHeaders } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -63,7 +65,8 @@ const routes: Routes = [
   ClientModule,
   ClientRoutingModule,
   ParametersModule,
-  ProductRoutingModule
+  ProductRoutingModule,
+  FormsModule
   
 ],
   exports: [RouterModule]

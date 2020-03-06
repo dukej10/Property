@@ -4,6 +4,8 @@ import { CategoryCreatorComponent } from './category/category-creator/category-c
 import { CategoryEditorComponent } from './category/category-editor/category-editor.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { ProductListComponent } from '../product/admin/admin/product-list/product-list.component';
+import { FormsModule } from '@angular/forms';
+import { CategoryModel } from 'src/app/models/category.model';
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+  FormsModule
+  ],
   exports: [RouterModule]
 })
 export class ParametersRoutingModule { }
