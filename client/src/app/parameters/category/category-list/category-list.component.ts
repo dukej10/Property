@@ -42,6 +42,7 @@ export class CategoryListComponent implements OnInit {
     this.catService.deleteCategory(categoryId).subscribe(item => {
       deleteMessageModal("Ha sido eliminado satisfactoriamente.");
       this.route.navigate(["/admin/category/list"]);
+      location.reload();
     })
   }
 

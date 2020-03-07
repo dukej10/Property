@@ -41,6 +41,7 @@ export class ProductListComponent implements OnInit {
     this.pService.deleteProduct(ProductId).subscribe(item => {
       /* deleteMessageModalP("Ha sido eliminado satisfactoriamente."); */
       this.route.navigate(["/admin/product/list"]);
+      location.reload();
     })
   }
 
