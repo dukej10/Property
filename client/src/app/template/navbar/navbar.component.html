@@ -3,22 +3,33 @@
       <a routerLink="/home" class="brand-logo">Inmobiliaria</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/security/user/login">Login</a></li>
-        <li><a routerLink="/security/user/logout">Logout</a></li>
-        <li><a routerLink="/client/list">Client</a></li>
-        <!-- <li><a routerLink="/product/list">Product</a></li> -->
-        <li><a routerLink="/admin/category/list">A Category</a></li>
-        <li><a routerLink="/admin/product/list">A Product</a></li>
+        <li *ngIf="!userLogged"><a routerLink="/security/user/login">Login</a></li> <!-- Muestra si no está loguead0 -->
+        <li *ngIf="userLogged"><a routerLink="/security/user/logout">Logout</a></li>
+        <li *ngIf="userLogged"><a routerLink="/client/list">Client</a></li>
+        <li *ngIf="userLogged"><a routerLink="/admin/category/list">A Category</a></li>
+        <li *ngIf="userLogged"><a routerLink="/admin/product/list">A Product</a></li>
 
       </ul>
+    </div>
+    <div *ngIf="userLogged">      <!-- Muestra el nombre de quien este logueado -->
+      <strong class="sesion" >En sesión: {{completeName}}</strong>
     </div>
   </nav>
   
   <ul class="sidenav" id="mobile-demo">
-    <li><a routerLink="/security/user/login">Login</a></li>
-    <li><a routerLink="/security/user/logout">Logout</a></li>
-    <li><a routerLink="/client/list">Client</a></li>
-  <!--   <li><a routerLink="/product/list">Product</a></li> -->
-    <li><a routerLink="/admin/category/list">A Category</a></li>
-    <li><a routerLink="/admin/product/list">A Product</a></li>
+    <li *ngIf="
+!userLogged"
+><a routerLink="/security/user/login">Login</a></li>
+    <li *ngIf="
+userLogged"
+><a routerLink="/security/user/logout">Logout</a></li>
+    <li *ngIf="
+userLogged"
+><a routerLink="/client/list">Client</a></li>
+    <li *ngIf="
+userLogged"
+><a routerLink="/admin/category/list">A Category</a></li>
+    <li *ngIf="
+userLogged"
+><a routerLink="/admin/product/list">A Product</a></li>
 </ul>
