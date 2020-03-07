@@ -27,7 +27,7 @@ export class ProductService {
   saveNewProduct(product: PropertyModel): Observable<PropertyModel>{
     return this.http.post<PropertyModel>(`${base_url}properties`, product, {
       headers: new HttpHeaders({
-        "content-type": "aplication/json"
+        "content-type": "application/json"
       })
     });
   }
@@ -35,7 +35,7 @@ export class ProductService {
   updateProduct(product: PropertyModel): Observable<PropertyModel>{
     return this.http.put<PropertyModel>(`${base_url}properties`, product, {
       headers: new HttpHeaders({
-        "content-type": "aplication/json"
+        "content-type": "application/json"
       })
     });
   }

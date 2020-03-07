@@ -26,7 +26,7 @@ export class CategoryService {
   saveNewCategory(Category: CategoryModel): Observable<CategoryModel>{
     return this.http.post<CategoryModel>(`${base_url}Categories`, Category, {
       headers: new HttpHeaders({
-        "content-type": "aplication/json"
+        "content-type": "application/json"
       })
     });
   }
@@ -34,7 +34,7 @@ export class CategoryService {
   updateCategory(Category: CategoryModel): Observable<CategoryModel>{
     return this.http.put<CategoryModel>(`${base_url}Categories`, Category, {
       headers: new HttpHeaders({
-        "content-type": "aplication/json"
+        "content-type": "application/json"
       })
     });
   }
