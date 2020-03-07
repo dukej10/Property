@@ -61,6 +61,17 @@ module.exports = function(Category) {
     
     )
 
+    Category.sendEmail(emailAddresses, subject, message, cb) => {
+        Category.app.models.Email.send()
+    }
+    
+    Category.remoteMethod('sendEmail',{
+        http: {
+            path: '/sendEmail',
+            verb: 'get'
+        }
+    })
+
 };
 
 /* module1.exports = function(Category) {
@@ -73,7 +84,7 @@ Category.getCategorySameTrequest= function (trequest, cb){
         }
     }, cb);
 
-};
+};a
 
 
 Category.remoteMethod1("getCategorySameTrequest", {
