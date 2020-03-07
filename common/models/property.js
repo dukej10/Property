@@ -30,12 +30,14 @@ module.exports = function(Property) {
     
     )
     
-    /* menor o igual precio */
-    Property.ProductsSamecategory= function (price, cb){
+    /* inmubles de igual categoria */
+    Property.ProductsSamecategory= function (category, cb){
         Property.find({
             where:{
-                price:{
-                    lt: price
+                category
+:{
+                    lt: category
+
                  }
             }
         }, cb);
@@ -44,7 +46,7 @@ module.exports = function(Property) {
 
     Property.remoteMethod("ProductsSamecategory", {
         accepts: {
-            arg: "price",
+            arg: "category",
             type: "string"
         },
         returns: {
