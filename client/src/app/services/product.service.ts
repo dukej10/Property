@@ -32,6 +32,7 @@ export class ProductService {
     });
   }
 
+  /* Me actualiza el producto seleccionado */
   updateProduct(product: PropertyModel): Observable<PropertyModel>{
     return this.http.put<PropertyModel>(`${base_url}properties`, product, {
       headers: new HttpHeaders({
