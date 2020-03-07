@@ -17,7 +17,7 @@ export class UrlInjectionGuard implements CanActivate {
 
   canActivate(){
     if(isNullOrUndefined(this.uService.getUserInformation())){  /* Si se cumple, es que no se ha iniciado sesión */
-      this.router.navigate(["/user/login"]);
+      this.router.navigate(["/security/user/login"]);
       return false;
     }else{
       return true;
