@@ -21,7 +21,7 @@
           "port": 465,
           "auth": {
             "user": "pruebas.envio.prog@gmail.com",
-            "pass": 
+            "pass": "envio123"
           }
         }
       ]
