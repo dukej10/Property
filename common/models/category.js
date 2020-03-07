@@ -31,8 +31,6 @@ module.exports = function(Category) {
     
     )
 
-
-
     Category.getCategorySameTrequest= function (trequest, cb){
         Category.find({
             where:{
