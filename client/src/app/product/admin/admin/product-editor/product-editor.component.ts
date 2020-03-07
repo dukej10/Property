@@ -44,7 +44,7 @@ export class ProductEditorComponent implements OnInit {
   updateProduct(){
     this.pService.updateProduct(this.product).subscribe(item => {
       alert("Se actualizó")
-      this.router.navigate(["/admin/category/list"]);
+      this.router.navigate(["/admin/product/list"]);
     });
   }
 
