@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
+import { FormLoginGuard } from '../guards/form-login.guard';
 
 
 const routes: Routes = [
   {
     path: 'user/login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate:[
+      FormLoginGuard   /* Cuando el usuario no está identificado */
+    ]
   },
   {
     path: 'user/logout',
@@ -16,7 +20,10 @@ const routes: Routes = [
   },
   {
     path: 'user/register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [
+      FormLoginGuard   /* Cuando el usuario no está identificado */
+    ]
   },
   {
     path: '',
