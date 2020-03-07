@@ -61,7 +61,7 @@ module.exports = function(Category) {
     
     )
 
-    Category.sendEmail(emailAddresses, subject, message, cb) => {
+    Category.sendEmail = (emailAddresses, subject, message, cb) => {
         Category.app.models.Email.send({
             to: emailAddresses,
             from: "Company",
