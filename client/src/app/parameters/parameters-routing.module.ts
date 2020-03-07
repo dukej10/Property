@@ -6,22 +6,31 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 import { ProductListComponent } from '../product/admin/admin/product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { CategoryModel } from 'src/app/models/category.model';
+import { UrlInjectionGuard } from '../guards/url-injection.guard';
 
 
 const routes: Routes = [
   {
     path: 'admin/category/creator',
-    component: CategoryCreatorComponent
-
+    component: CategoryCreatorComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   },
   {
     path: 'admin/category/editor/:id',
-    component: CategoryEditorComponent
+    component: CategoryEditorComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
 
   },
   {
     path: 'admin/category/list',
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
 
   }
   

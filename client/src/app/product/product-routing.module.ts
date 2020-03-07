@@ -7,6 +7,7 @@ import { ProductModule } from './product.module';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { FormsModule } from '@angular/forms';
+import { UrlInjectionGuard } from '../guards/url-injection.guard';
 
 const routes: Routes = [
   /* Rutas de producto */
@@ -28,7 +29,10 @@ const routes: Routes = [
   }, */
   {
     path: 'admin/product/creator',
-    component: ProductCreatorComponent
+    component: ProductCreatorComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
 
   },
   {
@@ -43,12 +47,18 @@ const routes: Routes = [
   },
   {
     path: 'admin/product/list',
-    component: ProductListComponent
+    component: ProductListComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
 
   },
   {
     path: 'admin/product/editor/:id',
-    component: ProductEditorComponent
+    component: ProductEditorComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
 
   }
 ];
