@@ -40,7 +40,7 @@ export class ProductListComponent implements OnInit {
   deleteProduct(ProductId: string): void{
     this.pService.deleteProduct(ProductId).subscribe(item => {
       /* deleteMessageModalP("Ha sido eliminado satisfactoriamente."); */
-      this.route.navigate(["/admin/product/list"]);
+      /* this.route.navigate(["/admin/product/list"]); */
       location.reload();
     })
   }
