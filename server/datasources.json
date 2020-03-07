@@ -9,5 +9,22 @@
     "user": "",
     "useNewUrlParser": true,
     "connector": "mongodb"
+  },
+  "Email":{
+      "name": "Email",
+      "connector":"mail",
+      "transports":[
+        {
+          "type": "SMTP",
+          "host": "smtp.gmai.com",
+          "secure": true,
+          "port": 465,
+          "auth": {
+            "user": "pruebas.envio.prog@gmail.com",
+            "pass": 
+          }
+        }
+      ]
+
   }
 }
