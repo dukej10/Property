@@ -62,15 +62,46 @@ module.exports = function(Category) {
     )
 
     Category.sendEmail(emailAddresses, subject, message, cb) => {
-        Category.app.models.Email.send()
+        Category.app.models.Email.send({
+            to: emailAddresses,
+            from: "Company",
+            subject: subject,
+            text: message,
+            html: message
+        }, function (err, mail){
+            console.log("correo enviado");
+            if (err) return err;
+        });
+        cb(null, 'message sent: ' + message);
     }
     
     Category.remoteMethod('sendEmail',{
         http: {
             path: '/sendEmail',
             verb: 'get'
-        }
-    })
+        },
+        description: [
+            "Api to send email messages."
+        ],
+        accepts: [
+            {
+               arg: 'message',
+               type: 'string',
+               required: true 
+            },
+            {
+                arg: 'subject',
+                type: 'string',
+                required: true 
+            },
+            {
+                arg: 'emailAddresses',
+                type: 'string',
+                required: true 
+            }
+        ],
+        returns: { arg: 'response', type: 'string' }
+    });
 
 };
 
