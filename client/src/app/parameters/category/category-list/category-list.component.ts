@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryModel } from 'src/app/models/category.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 declare const deleteMessageModal: any;      /* Mensaje Modal elim */
 
@@ -12,7 +13,7 @@ declare const deleteMessageModal: any;      /* Mensaje Modal elim */
 })
 export class CategoryListComponent implements OnInit {
 
-  constructor(private catService: CategoryService, private route: Router) { }
+  constructor(private catService: CategoryService, private route: Router, private spinner: NgxSpinnerService) { }
 
 
   categoryList: CategoryModel[] = [];
@@ -21,6 +22,13 @@ export class CategoryListComponent implements OnInit {
 
   idToShowButtons: string = '';        
 
+
+  /* para ngxPagination */
+  cp: number= 1;
+  total: number= 0;
+
+  /* ---------*/   
+
   ngOnInit(): void {
     this.getAllCategories();
   }
@@ -28,6 +36,7 @@ export class CategoryListComponent implements OnInit {
   getAllCategories(): void{
     this.catService.getAllCategories().subscribe(items => {
       this.categoryList = items;
+      this.total = items.length;
     })
   }
 
@@ -44,6 +53,19 @@ export class CategoryListComponent implements OnInit {
       this.route.navigate(["/admin/category/list"]);
       location.reload();
     })
+  }
+
+  /*NgxSpinner*/
+  
+  onPageChange(event):void{
+    this.spinner.show();
+
+    this.cp = event;
+ 
+    setTimeout(() => {
+      /** spinner ends after 3 seconds */
+      this.spinner.hide();
+    }, 3000);
   }
 
 }

@@ -22,7 +22,7 @@
             </th>
         </tr>
     </thead>
-        <tr *ngFor="let c of categoryList">
+        <tr *ngFor="let c of categoryList | paginate: { itemsPerPage: 2, currentPage: cp, totalItems: total }" >
             <td>
                 {{c.code}}
             </td>
@@ -49,8 +49,11 @@
 
     </tbody>
 </table>
+
+<pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+
 <!-- Modal Message -->
-<div id="deleteCMessageModal" class="modal">
+<!-- <div id="deleteCMessageModal" class="modal">
     <div class="modal-content">
       <h4>Categoría Creada</h4>
       <strong id="strDeleteCMessage"></strong>
@@ -59,3 +62,4 @@
       <a class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
+ -->
