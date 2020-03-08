@@ -68,7 +68,7 @@ export class CategoryCreatorComponent implements OnInit {
   saveNewCategory():void{
     if(this.categoryFormGroup.valid){
       this.catService.saveNewCategory(this.buildCategoryData()).subscribe(item => {
-        alert("Se actualizó");
+        alert("SE GUARDÓ");
         this.router.navigate(["/admin/category/list"]);
       })
     }else{
