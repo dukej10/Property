@@ -40,7 +40,7 @@ export class UserService {
 
   }
 
-  getToken(token){
+  getToken(){
     return localStorage.getItem("userTk");
 
   }
