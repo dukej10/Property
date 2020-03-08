@@ -10,12 +10,12 @@ function showUpdateMessage(message){
     instance.open();
 }
 
-function deleteMessageModal(message){
+/* function deleteMessageModal(message){
   let elem = document.querySelector("#deleteCMessageModal");
   let instance = M.Modal.getInstance(elem);
   document.querySelector("#strDeleteCMessage").innerHTML = message;
   instance.open();
-}
+} */
 
 function saveMessageModal(message){
   let elem = document.querySelector("#saveCMessageModal");
@@ -23,9 +23,10 @@ function saveMessageModal(message){
   document.querySelector("#strSaveCMessage").innerHTML = message;
   instance.open();
 }
+/* 
 function deleteMessageModalP(message){
   let elem = document.querySelector("#deletePMessageModal");
   let instance = M.Modal.getInstance(elem);
   document.querySelector("#strDeletePMessage").innerHTML = message;
   instance.open();
-}
+} */
