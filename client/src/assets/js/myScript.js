@@ -10,12 +10,12 @@ function showUpdateMessage(message){
     instance.open();
 }
 
-/* function deleteMessageModal(message){
+function deleteMessageModal(message){
   let elem = document.querySelector("#deleteCMessageModal");
   let instance = M.Modal.getInstance(elem);
   document.querySelector("#strDeleteCMessage").innerHTML = message;
   instance.open();
-} */
+}
 
 function saveMessageModal(message){
   let elem = document.querySelector("#saveCMessageModal");
