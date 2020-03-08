@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { SecurityModule } from './security/security.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { HeroComponent } from './template/hero/hero.component';
 import { HomeComponent } from './template/home/home.component';
@@ -24,7 +24,9 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     AppRoutingModule,
     SecurityModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
