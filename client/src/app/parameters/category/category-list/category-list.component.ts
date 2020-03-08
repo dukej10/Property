@@ -40,7 +40,7 @@ export class CategoryListComponent implements OnInit {
   /* Elimina la categoria al dar click en confirmación */
   deleteCategory(categoryId: string): void{
     this.catService.deleteCategory(categoryId).subscribe(item => {
-      deleteMessageModal("Ha sido eliminado satisfactoriamente.");
+      /* deleteMessageModal("Ha sido eliminado satisfactoriamente."); */
       this.route.navigate(["/admin/category/list"]);
       location.reload();
     })
