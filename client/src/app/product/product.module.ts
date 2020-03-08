@@ -6,14 +6,17 @@ import { ProductCreatorComponent } from './admin/admin/product-creator/product-c
 import { ProductEditorComponent } from './admin/admin/product-editor/product-editor.component';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [ProductListComponent, ProductCreatorComponent, ProductEditorComponent, ProductHomeComponent, ProductDetailsComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports:[
     ProductListComponent,
