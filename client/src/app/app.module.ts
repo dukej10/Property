@@ -10,6 +10,9 @@ import { HeroComponent } from './template/hero/hero.component';
 import { HomeComponent } from './template/home/home.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     FooterComponent,
     NavbarComponent,
     HeroComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,11 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
     SecurityModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
+    
 
   ],
   providers: [],

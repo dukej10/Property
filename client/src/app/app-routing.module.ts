@@ -13,6 +13,8 @@ import { ClientListComponent } from './client/client-list/client-list.component'
 import { ClientRoutingModule } from './client/client-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const routes: Routes = [
@@ -66,7 +68,9 @@ const routes: Routes = [
   ClientRoutingModule,
   ParametersModule,
   ProductRoutingModule,
-  FormsModule
+  FormsModule,
+  NgxSpinnerModule,
+  NgxPaginationModule
   
 ],
   exports: [RouterModule]
