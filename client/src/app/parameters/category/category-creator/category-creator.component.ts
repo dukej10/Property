@@ -68,11 +68,11 @@ export class CategoryCreatorComponent implements OnInit {
   saveNewCategory():void{
     if(this.categoryFormGroup.valid){
       this.catService.saveNewCategory(this.buildCategoryData()).subscribe(item => {
-        alert("Llene todos los campos primero correctamente");
+        alert("Se actualizó");
         this.router.navigate(["/admin/category/list"]);
       })
     }else{
-      alert("no ppeee");
+      alert("Llene todos los campos correctamente");
     }
     /* Para ngModel */
     /* this.catService.saveNewCategory(this.category).subscribe(item => {
