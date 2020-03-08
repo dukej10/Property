@@ -13,16 +13,18 @@
   "Email": {
     "name": "Email",
     "connector": "mail",
-    "transports": [{
-      "type": "SMTP",
-      "host": "smtp.gmail.com",
-      "secure": true,
-      "port": 465,
-      "auth": {
-        "user": "pruebas.envio.prog@gmail.com",
-        "pass": "envio123"
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "pruebas.envio.prog@gmail.com",
+          "pass": "envio123"
+        }
       }
-    }]
+    ]
   },
   "UploadFiles": {
     "name": "UploadFiles",
