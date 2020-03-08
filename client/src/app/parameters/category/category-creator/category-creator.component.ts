@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryModel } from 'src/app/models/category.model';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 declare const saveMessageModal: any;      /* Mensaje Modal elim */
 
@@ -12,27 +13,76 @@ declare const saveMessageModal: any;      /* Mensaje Modal elim */
 })
 export class CategoryCreatorComponent implements OnInit {
 
-  constructor(private catService: CategoryService, private router: Router) { }
+  constructor(private catService: CategoryService, private router: Router) { 
+    this.categoryFormGroup = this.formGroupCreator();
+  }
 
-  category: CategoryModel = {
+  categoryFormGroup: FormGroup;
+
+  formGroupCreator(): FormGroup{
+     /* los campos que se solicitan */
+    return new FormGroup({ 
+      name : new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      code: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(5)]),
+      trequest: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)])
+    });
+  }
+
+ /*  Se usaba para el ngModel */
+ /*  category: CategoryModel = {
     code: null,
     name: null,
     trequest: null, 
     id: null  
+  } */
+
+
+  get code(){
+    return this.categoryFormGroup.get('code');
   }
 
+  get name(){
+    return this.categoryFormGroup.get('name');
+  }
+
+  get trequest(){
+    return this.categoryFormGroup.get('trequest');
+  }
   ngOnInit(): void {
   }
 
-  /* Guardar la nueva categoria creada */
+  buildCategoryData(): CategoryModel{
+    let category: CategoryModel = {
+      id: null,
+      code: this.code.value,
+      name: this.name.value,
+      trequest: this.trequest.value
+    }
+    return category;
+  }
+
+
+
+  /* Guardar la nueva categoria creada usando formgropu, from control name..*/
   saveNewCategory():void{
-    this.catService.saveNewCategory(this.category).subscribe(item => {
+    if(this.categoryFormGroup.valid){
+      this.catService.saveNewCategory(this.buildCategoryData()).subscribe(item => {
+        alert("Llene todos los campos primero correctamente");
+        this.router.navigate(["/admin/category/list"]);
+      })
+    }else{
+      alert("no ppeee");
+    }
+    /* Para ngModel */
+    /* this.catService.saveNewCategory(this.category).subscribe(item => {
       console.log("oe");
-      /* saveMessageModal("Ha sido guardada satisfactoriamente."); */
+      /* saveMessageModal("Ha sido guardada satisfactoriamente."); 
       alert("oe");
       console.log("oe");
-      this.router.navigate(["/admin/category/list"]);
-    })
+      this.router.navigate(["/admin/category/list"]); 
+    });*/
+
+
   }
 
 
