@@ -7,6 +7,7 @@ import { ProductListComponent } from '../product/admin/admin/product-list/produc
 import { FormsModule } from '@angular/forms';
 import { CategoryModel } from 'src/app/models/category.model';
 import { UrlInjectionGuard } from '../guards/url-injection.guard';
+import { LoginComponent } from '../security/login/login.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,7 @@ const routes: Routes = [
       UrlInjectionGuard
     ]
 
-  }
+  },
   
 ];
 
