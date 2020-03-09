@@ -65,7 +65,7 @@ export class CategoryListComponent implements OnInit {
     setTimeout(() => {
       /** spinner ends after 3 seconds */
       this.spinner.hide();
-    }, 3000);
+    }, 1500);
   }
 
 }
