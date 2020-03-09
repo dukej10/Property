@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, {});
   });
 
-function showUpdateMessage(message){
-    let elem = document.querySelector("#updatedMessageModal");
+
+function showUpdateMessageModal(message){
+    let elem = document.querySelector("#updateMessageModal");
     let instance = M.Modal.getInstance(elem);
     document.querySelector("#strUpdateMessage").innerHTML = message;
+    console.log(document);
     instance.open();
 }
 
@@ -21,8 +23,9 @@ function saveMessageModal(message){
   let elem = document.querySelector("#saveCMessageModal");
   let instance = M.Modal.getInstance(elem);
   document.querySelector("#strSaveCMessage").innerHTML = message;
+  console.log(document);
   instance.open();
-}
+} */
 /* 
 function deleteMessageModalP(message){
   let elem = document.querySelector("#deletePMessageModal");
