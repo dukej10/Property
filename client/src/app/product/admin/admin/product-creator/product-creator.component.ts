@@ -13,7 +13,6 @@ export class ProductCreatorComponent implements OnInit {
   constructor(private pService: ProductService, private route: Router) { }
 
   product: PropertyModel ={
-    id: null,
     code: null,
     name: null,
     available: null,
@@ -25,7 +24,8 @@ export class ProductCreatorComponent implements OnInit {
     description: null,
     image: null,
     image1: null,
-    address: null
+    address: null,
+    id: null
   }
 
   ngOnInit(): void {
@@ -33,9 +33,10 @@ export class ProductCreatorComponent implements OnInit {
 
   saveNewProduct(): void{
     this.pService.saveNewProduct(this.product).subscribe(item =>{
+      console.log(this.product);
       alert("se guardo product");
       this.route.navigate(["/admin/product/list"]);
-    });
+    })
 
   }
 

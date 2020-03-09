@@ -27,13 +27,56 @@
       <label for="des" class="active">Tipo de requerimiento</label>
     </div>
 </div>
+<div class= "row">
+  <div class="input-field col s4">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.rooms" id="rooms" type="text" class="validate">
+  <label for="rooms">Rooms</label>
+  </div>
+  <div class="input-field col s4">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.bathrooms" id="bathrooms" type="text" class="validate">
+  <label for="rooms">Baños</label>
+  </div>
+  <div class="input-field col s4">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.area" id="area" type="text" class="validate">
+  <label for="area">Área</label>
+  </div>
+</div>
+<div class= "row">
+<div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+          <input [(ngModel)]="product.category" id="category" type="text" class="validate">
+          <label for="category">Category</label>
+  </div>
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.price" id="price" type="text" class="validate">
+  <label for="price">Precio</label>
+  </div>
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.image" id="image" type="text" class="validate">
+  <label for="image">Imagen </label>
+  </div>
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.image1" id="image1" type="text" class="validate">
+  <label for="image1">Image 2</label>
+  </div>
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input [(ngModel)]="product.address" id="address" type="text" class="validate">
+  <label for="address">Dirección</label>
+  </div>
+</div>
 <div class="row">
     <div class="col s12">
         <a class="waves-effect waves-light btn" (click)="updateProduct()"><i class="material-icons right">edit</i>Actualizar</a>
     </div>
 </div>
 </div>
-
 
 </div>
 

@@ -28,6 +28,14 @@ export class ProductService {
     return this.http.get<PropertyModel>(`${base_url}properties/${productId}?access_token=${this.token}`);
   }
 
+ /*  saveNewProduct(product: PropertyModel): Observable<PropertyModel>{
+    return this.http.post<PropertyModel>(`${base_url}properties?access_token=${this.token}`, product, {
+      headers: new HttpHeaders({
+        "content-type": "application/json"
+      })
+    });
+  } */
+
   saveNewProduct(product: PropertyModel): Observable<PropertyModel>{
     return this.http.post<PropertyModel>(`${base_url}properties?access_token=${this.token}`, product, {
       headers: new HttpHeaders({
