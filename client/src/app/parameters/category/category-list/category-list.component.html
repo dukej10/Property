@@ -22,7 +22,7 @@
             </th>
         </tr>
     </thead>
-        <tr *ngFor="let c of categoryList | paginate: { itemsPerPage: 2, currentPage: cp, totalItems: total }" >
+        <tr *ngFor="let c of categoryList | paginate: { itemsPerPage: 5, currentPage: cp, totalItems: total }" >
             <td>
                 {{c.code}}
             </td>
