@@ -34,22 +34,6 @@ export class ProductCreatorComponent implements OnInit {
     });
   }
 
-  /*   product: PropertyModel ={
-      code: null,
-      name: null,
-      available: null,
-      rooms: null,
-      bathrooms: null,
-      area: null,
-      category: null,
-      price: null,
-      description: null,
-      image: null,
-      image1: null,
-      address: null,
-      id: null
-    } */
-
     get code(){
       return this.productFormGroup.get('code');
     }
