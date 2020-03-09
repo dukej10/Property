@@ -23,8 +23,8 @@ export class CategoryCreatorComponent implements OnInit {
      /* los campos que se solicitan */
     return new FormGroup({ 
       name : new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      code: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(5)]),
-      trequest: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)])
+      code: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(5)]),
+      trequest: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(8)])
     });
   }
 
@@ -68,7 +68,8 @@ export class CategoryCreatorComponent implements OnInit {
   saveNewCategory():void{
     if(this.categoryFormGroup.valid){
       this.catService.saveNewCategory(this.buildCategoryData()).subscribe(item => {
-        alert("SE GUARDÓ");
+        /* saveMessageModal("oeee"); */
+        alert("Se guardó la categoría");
         this.router.navigate(["/admin/category/list"]);
       })
     }else{
