@@ -64,13 +64,13 @@ get trequest(){
 
 
  updateCategory(){
-  if(this.cFormGroup.valid){
-    this.category.code = this.cFormGroup.get('code').value;
+  if(this.cFormGroup.valid){  /* Si cumple el formato */
+    this.category.code = this.cFormGroup.get('code').value;  /* Actualizacion */
     this.category.name = this.cFormGroup.get('name').value;
     this.category.trequest = this.cFormGroup.get('trequest').value;
     this.catService.updateCategory(this.category).subscribe(item => {
-    this.router.navigate(["/admin/product/list"]);
-    alert("oe");
+    this.router.navigate(["/admin/category/list"]);
+    alert("Se actualizó");
    });
   }
 }
