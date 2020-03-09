@@ -12,7 +12,7 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     CommonModule,
     SecurityRoutingModule,
-    FormsModule,
+    FormsModule,  /* PARA LOGIN */
     ReactiveFormsModule
   ],
   exports:[

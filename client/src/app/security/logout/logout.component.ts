@@ -11,13 +11,14 @@ export class LogoutComponent implements OnInit {
 
   constructor(private userSevice: UserService, private router: Router) { }
 
-  ngOnInit(): void {   /* cuando den click */
+  ngOnInit(): void {   /* cuando den click en Logout*/
     this.logoutUser();  
   }
 
   logoutUser(): void{
     this.userSevice.logoutUser();
     this.router.navigate(["/home"]);
+
     
   }
 

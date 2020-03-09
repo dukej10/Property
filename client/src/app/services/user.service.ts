@@ -45,7 +45,7 @@ export class UserService {
 
   }
 
-  saveUserInformation(user: UserModel){
+  saveUserInformation(user: UserModel):void{
     localStorage.setItem("userInfo", JSON.stringify(user));
   }
 

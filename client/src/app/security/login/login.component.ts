@@ -17,18 +17,18 @@ export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
-  logged: boolean = false;
+  logged: boolean = false;  /* Para saber si esá logueado */
 
 
   ngOnInit() { 
   }
   
 
-  onLoginBtnClick(): void{
+  onLoginBtnClick(): void{  /* Se invoca cuando le den click al boton */
     this.userService.loginUser(this.email, this.password).subscribe(item => {
       console.log(item.id);
       this.userService.saveToken(item.id);
-      this.userService.saveUserInformation(item.user);
+      this.userService.saveUserInformation(item.user);  /* información del usurario */
       location.reload();
     });
   }
