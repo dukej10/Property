@@ -1,8 +1,5 @@
-/* document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {});
-  });
 
+/*
 
 function showUpdateMessageModal(message){
     let elem = document.querySelector("#updateMessageModal");
