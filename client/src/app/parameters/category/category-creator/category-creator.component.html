@@ -6,7 +6,7 @@
     <div class= "row">
         <div class="input-field col s3">
             <i class="material-icons prefix">account_circle</i>
-                  <input formControlName="code" id="code" type="text" class="validate">
+                <input formControlName="code" id="code" type="text" class="validate">
                   <label for="code">Code</label>
                   <div class="errorContainer" *ngIf="(code.touched || code.dirty) && code.invalid">
                     <div *ngIf="code.errors.required" >
