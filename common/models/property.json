@@ -70,6 +70,7 @@
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
       "permission": "DENY"
-    }],
+    }
+  ],
   "methods": {}
 }

@@ -18,6 +18,10 @@
     "trequest": {
       "type": "string",
       "required": true
+    },
+    "ej": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
