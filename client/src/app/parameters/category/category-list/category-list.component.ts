@@ -63,7 +63,7 @@ export class CategoryListComponent implements OnInit {
     this.cp = event;
  
     setTimeout(() => {
-      /** spinner ends after 3 seconds */
+      /** spinner ends after 1,5 seconds */
       this.spinner.hide();
     }, 1500);
   }

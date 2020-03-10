@@ -40,6 +40,9 @@ export class CategoryCreatorComponent implements OnInit {
   get trequest(){
     return this.categoryFormGroup.get('trequest');
   }
+
+
+
   ngOnInit(): void {
   }
 
@@ -48,7 +51,7 @@ export class CategoryCreatorComponent implements OnInit {
       id: null,
       code: this.code.value,
       name: this.name.value,
-      trequest: this.trequest.value
+      trequest: this.trequest.value,
     }
     return category;
   }
