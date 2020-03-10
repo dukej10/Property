@@ -28,14 +28,6 @@ export class CategoryCreatorComponent implements OnInit {
     });
   }
 
- /*  Se usaba para el ngModel */
- /*  category: CategoryModel = {
-    code: null,
-    name: null,
-    trequest: null, 
-    id: null  
-  } */
-
 
   get code(){
     return this.categoryFormGroup.get('code');
