@@ -30,6 +30,7 @@ export class UserService {
 
   }
 
+
   logoutUser(){
     localStorage.removeItem("userInfo");
     localStorage.removeItem("userTk");
