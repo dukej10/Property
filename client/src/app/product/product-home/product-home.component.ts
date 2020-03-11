@@ -15,6 +15,28 @@ export class ProductHomeComponent implements OnInit {
 
   productList: PropertyModel[] = [];
 
+  cList: PropertyModel[] = []
+
+    condicion: string = null;
+
+  condition(condicion){
+    this.cList = [];
+    if(condicion == "venta"){
+      for(let prop of this.productList){
+        if(prop.category == condicion){
+          this.cList.push(prop);
+        }
+      }
+    }
+    if(condicion == "alquiler"){
+      for(let prop of this.productList){
+        if(prop.category == condicion){
+          this.cList.push(prop);
+        }
+      }
+    }
+}
+
   ngOnInit(){
     this.getAllProducts(); 
   }
