@@ -30,6 +30,16 @@ export class UserService {
 
   }
 
+  registerUser(user: UserModel){
+    return this.http.post<UserModel>(`${base_url}Users`, user, {
+      headers: new HttpHeaders({
+        "content-type":"application/json"
+      })
+    });
+
+  }
+
+
 
   logoutUser(){
     localStorage.removeItem("userInfo");
