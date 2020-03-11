@@ -25,9 +25,6 @@ const routes: Routes = [
   {
     path: 'user/register',
     component: RegisterComponent,
-    canActivate: [
-      FormLoginGuard   /* Cuando el usuario no está identificado */
-    ]
   },
   {
     path: '',
