@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { ProductModule } from 'src/app/product/product.module';
+import { NgxSpinner } from 'ngx-spinner/lib/ngx-spinner.enum';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 declare const deleteMessageModalP: any;      /* Mensaje Modal elim */
 
@@ -12,7 +14,7 @@ declare const deleteMessageModalP: any;      /* Mensaje Modal elim */
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(private pService: ProductService, private route: Router) { }
+  constructor(private pService: ProductService, private route: Router, private spinner: NgxSpinnerService) { }
 
   productList: ProductModule[] = [];
   
@@ -35,6 +37,11 @@ export class ProductListComponent implements OnInit {
     this.idToShowButtons = id;
     this.showConfirmationsButtons = !this.showConfirmationsButtons;
   }
+  /* para ngxPagination */
+  cp: number= 1;
+  total: number= 0;
+
+  /* ---------*/  
 
   /* Elimina la categoria al dar click en confirmación */
   deleteProduct(ProductId: string): void{
@@ -43,6 +50,21 @@ export class ProductListComponent implements OnInit {
       /* this.route.navigate(["/admin/product/list"]); */
       location.reload();
     })
+  }
+
+    /*NgxSpinner*/
+  
+onPageChange(event):void{
+  this.spinner.show();
+
+  this.cp = event;
+
+  setTimeout(() => {
+    /** spinner ends after 1,5 seconds */
+    this.spinner.hide();
+  }, 1000);
+  }
+
   }
 
 
@@ -60,4 +82,4 @@ export class ProductListComponent implements OnInit {
 
   
 
-}
+
