@@ -70,6 +70,8 @@ export class RegisterComponent implements OnInit {
     return user1;
   }
 
+  
+
   /* builClientData(): ClientModel{
     let client1: ClientModel = {
       id: null,
