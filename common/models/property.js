@@ -34,9 +34,9 @@ module.exports = function(Property) {
     Property.ProductsSamecategory= function (category, cb){
         Property.find({
             where:{
-                category
-:{
-                    lt: category
+                category:
+                {
+                    eq: category
 
                  }
             }
