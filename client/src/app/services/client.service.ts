@@ -14,8 +14,29 @@ export class ClientService {
 
   constructor(private uService: UserService, private http: HttpClient) {
     this.token = this.uService.getToken();
+    console.log(this.token);
   }
   token: string;
+
+ /*  getAllUsers():Observable<UserModel[]>{
+    return this.http.get<UserModel[]>(`${base_url}Users?access_token=${this.token}`);
+
+  } */
+
+  registerClient(user: UserModel){
+    return this.http.post<UserModel>(`${base_url}clientes`, user, {
+      headers: new HttpHeaders({
+        "content-type":"application/json"
+      })
+    });
+
+  }
+
+  
+
+  /* deleteUser(CategoryId: string): Observable<UserModel>{
+    return this.http.delete<UserModel>(`${base_url}Users/${CategoryId}?access_token=${this.token}`)
+    }; */
 
  /*  saveNewUser(Category: UserModel): Observable<UserModel>{
     return this.http.post<UserModel>(`${base_url}Users?access_token=${this.token}`, Category, {
