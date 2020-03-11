@@ -12,4 +12,5 @@ export interface    PropertyModel{
     image: string;
     image1: string;
     address: string;
+    tipo: string;
 }

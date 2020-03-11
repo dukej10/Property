@@ -188,6 +188,24 @@
   </div>
 </div>
 <div class="row">
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input formControlName="tipo" id="tipo" type="text" class="validate">
+  <label for="tipo">Tipo</label>
+  <div class="errorContainer" *ngIf="(tipo.touched || tipo.dirty) && tipo.invalid">
+    <div *ngIf="tipo.errors.required" >
+      ¡Este campo es requerido!
+    </div>
+    <div *ngIf="tipo.errors.minlength">
+      Es de minimo 4 caracteres de longitd
+    </div>
+    <div *ngIf="tipo.errors.maxlength">
+      Es de máximo 5 caracteres de longitd
+    </div>
+  </div>
+  </div>
+</div>
+<div class="row">
     <div class="col s12">
       <button class="btn green" type="submit">
         Save

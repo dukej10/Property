@@ -30,7 +30,8 @@ export class ProductCreatorComponent implements OnInit {
       description: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(1000000)]),
       image: new FormControl('', [Validators.required, Validators.maxLength(300000)]),
       image1: new FormControl('', [Validators.required, Validators.maxLength(300000)]),
-      address: new FormControl('', [Validators.required, Validators.maxLength(300000)])
+      address: new FormControl('', [Validators.required, Validators.maxLength(300000)]),
+      tipo: new FormControl('', [Validators.required, Validators.maxLength(40)])
     });
   }
 
@@ -78,6 +79,10 @@ export class ProductCreatorComponent implements OnInit {
       return this.productFormGroup.get('address');
     }
 
+    get tipo(){
+      return this.productFormGroup.get('tipo');
+    }
+
 
 
   ngOnInit(): void {
@@ -98,6 +103,7 @@ export class ProductCreatorComponent implements OnInit {
       image: this.image.value,
       image1: this.image1.value,
       address: this.address.value,
+      tipo: this.tipo.value
     }
     return property;
   }

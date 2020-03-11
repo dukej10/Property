@@ -31,7 +31,8 @@ export class ProductEditorComponent implements OnInit {
     description: null,
     image: null,
     image1: null,
-    address: null
+    address: null,
+    tipo: null
   };
 
   searchProduct():void{
