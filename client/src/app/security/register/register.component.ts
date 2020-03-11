@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buildCategoryData(): UserModel{
+  buildUserData(): UserModel{
     let user1: UserModel = {
       id: null,
     realm: this.name.value,
@@ -70,6 +70,20 @@ export class RegisterComponent implements OnInit {
     return user1;
   }
 
+  /* builClientData(): ClientModel{
+    let client1: ClientModel = {
+      id: null,
+    name: this.name.value,
+    lname: this.lastname.value,
+    document: this.document.value,
+    cel: this.cel.value,
+    email: this.email.value,
+    password: this.password.value
+    }
+    return client1;
+  } */
+
+
   
   
 
@@ -77,24 +91,14 @@ export class RegisterComponent implements OnInit {
   /* Guardar la nueva categoria creada usando formgropu, from control name..*/
   saveNewUser():void{
     if(this.categoryFormGroup.valid){
-      this.userService.registerUser(this.buildCategoryData()).subscribe(item => {
+      this.userService.registerUser(this.buildUserData()).subscribe(item => {
         /* saveMessageModal("oeee"); */
         alert("Se guardó la categoría");
         this.router.navigate(["/admin/category/list"]);
-      })
+      });
     }else{
       alert("Llene todos los campos correctamente");
     }
-    /* Para ngModel */
-    /* this.catService.saveNewCategory(this.category).subscribe(item => {
-      console.log("oe");
-      /* saveMessageModal("Ha sido guardada satisfactoriamente."); 
-      alert("oe");
-      console.log("oe");
-      this.router.navigate(["/admin/category/list"]); 
-    });*/
-
-
   }
 
 
