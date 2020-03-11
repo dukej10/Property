@@ -23,8 +23,8 @@ export class ClientService {
 
   } */
 
-  registerClient(user: UserModel){
-    return this.http.post<UserModel>(`${base_url}clientes`, user, {
+  registerClient(user: ClientModel){
+    return this.http.post<ClientModel>(`${base_url}clientes`, user, {
       headers: new HttpHeaders({
         "content-type":"application/json"
       })
