@@ -26,7 +26,8 @@ export class ProductDetailsComponent implements OnInit {
     description: null,
     image: null,
     image1: null,
-    address: null
+    address: null,
+    tipo: null
   }
 
   ngOnInit(): void {
