@@ -58,6 +58,22 @@
     "tipo": {
       "type": "string",
       "required": true
+    },
+    "depto": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "encargado": {
+      "type": "string",
+      "required": true
+    },
+    "contact": {
+      "type": "string",
+      "required": true
     }
 
   },

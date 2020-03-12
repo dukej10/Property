@@ -13,4 +13,8 @@ export interface    PropertyModel{
     image1: string;
     address: string;
     tipo: string;
+    depto: string;
+    city: string;
+    encargado: string;
+    contact: string;
 }
