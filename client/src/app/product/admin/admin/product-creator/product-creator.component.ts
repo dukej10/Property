@@ -3,6 +3,7 @@ import { PropertyModel } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-product-creator',
@@ -11,9 +12,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ProductCreatorComponent implements OnInit {
 
-  constructor(private pService: ProductService, private route: Router) { 
+  constructor(private pService: ProductService, private route: Router, private uService: UserService) { 
     this.productFormGroup = this.formGroupCreator();
   }
+
+  asesor: string = "";
 
   productFormGroup: FormGroup;
 
@@ -31,7 +34,10 @@ export class ProductCreatorComponent implements OnInit {
       image: new FormControl('', [Validators.required, Validators.maxLength(300000)]),
       image1: new FormControl('', [Validators.required, Validators.maxLength(300000)]),
       address: new FormControl('', [Validators.required, Validators.maxLength(300000)]),
-      tipo: new FormControl('', [Validators.required, Validators.maxLength(40)])
+      tipo: new FormControl('', [Validators.required, Validators.maxLength(40)]),
+      depto: new FormControl('', [Validators.required, Validators.maxLength(40)]),
+      city: new FormControl('', [Validators.required, Validators.maxLength(40)]),
+      contact: new FormControl('', [Validators.required, Validators.maxLength(40)])
     });
   }
 
@@ -83,13 +89,31 @@ export class ProductCreatorComponent implements OnInit {
       return this.productFormGroup.get('tipo');
     }
 
+    get depto(){
+      return this.productFormGroup.get('depto');
+    }
+
+    get city(){
+      return this.productFormGroup.get('city');
+    }
+    get contact(){
+      return this.productFormGroup.get('contact');
+    }
+
+    get encargado(){
+      return this.asesor;
+    }
+
 
 
   ngOnInit(): void {
+    let asesorinfo = this.uService.getUserInformation();
+    this.asesor = asesorinfo.realm;
+    console.log(typeof(this.asesor));
   }
 
   buildCategoryData(): PropertyModel{
-    let property: PropertyModel = {
+    let property: PropertyModel = {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
       id: null,
       code: this.code.value,
       name: this.name.value,
@@ -103,12 +127,17 @@ export class ProductCreatorComponent implements OnInit {
       image: this.image.value,
       image1: this.image1.value,
       address: this.address.value,
-      tipo: this.tipo.value
+      tipo: this.tipo.value,
+      depto: this.depto.value,
+      city: this.city.value,
+      encargado: this.asesor,
+      contact: this.contact.value
     }
     return property;
   }
 
   saveNewProduct():void{
+    console.log(this.asesor);
     if(this.productFormGroup.valid){
       this.pService.saveNewProduct(this.buildCategoryData()).subscribe(item => {
         /* saveMessageModal("oeee"); */
