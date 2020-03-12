@@ -37,7 +37,6 @@ export class ProductHomeComponent implements OnInit {
     }
 
     if(condicion == "casa"){
-      console.log(condicion)
       for(let prop of this.productList){
         if(prop.tipo == condicion){
           this.cList.push(prop);
@@ -46,7 +45,7 @@ export class ProductHomeComponent implements OnInit {
     }
 
     if(condicion == "apartamento"){
-      console.log(condicion)
+      console.log(condicion);
       for(let prop of this.productList){
         if(prop.tipo == condicion){
           this.cList.push(prop);
