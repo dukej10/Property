@@ -204,7 +204,50 @@
     </div>
   </div>
   </div>
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input formControlName="depto" id="depto" type="text" class="validate">
+  <label for="depto">Departamento</label>
+  <div class="errorContainer" *ngIf="(depto.touched || depto.dirty) && depto.invalid">
+    <div *ngIf="depto.errors.required" >
+      ¡Este campo es requerido!
+    </div>
+    <div *ngIf="depto.errors.maxlength">
+      Es de máximo 5 caracteres de longitd
+    </div>
+  </div>
+  </div>
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input formControlName="city" id="city" type="text" class="validate">
+  <label for="city">Ciudad</label>
+  <div class="errorContainer" *ngIf="(city.touched || city.dirty) && city.invalid">
+    <div *ngIf="city.errors.required" >
+      ¡Este campo es requerido!
+    </div>
+    <div *ngIf="city.errors.maxlength">
+      Es de máximo 5 caracteres de longitd
+    </div>
+  </div>
+  </div>
 </div>
+<div class="row">
+  <div class="input-field col s3">
+    <i class="material-icons prefix">account_circle</i>
+  <input formControlName="contact" id="city" type="text" class="validate">
+  <label for="contact">Contacto</label>
+  <div class="errorContainer" *ngIf="(contact.touched || contact.dirty) && contact.invalid">
+    <div *ngIf="contact.errors.required" >
+      ¡Este campo es requerido!
+    </div>
+    <div *ngIf="contact.errors.maxlength">
+      Es de máximo 5 caracteres de longitd
+    </div>
+  </div>
+  </div>
+</div>
+
+
 <div class="row">
     <div class="col s12">
       <button class="btn green" type="submit">
