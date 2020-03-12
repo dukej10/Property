@@ -45,6 +45,14 @@ export class ProductHomeComponent implements OnInit {
     }
 
     if(condicion == "apartamento"){
+      for(let prop of this.productList){
+        if(prop.tipo == condicion){
+          this.cList.push(prop);
+        }
+      }
+    }
+
+    if(condicion == "local"){
       console.log(condicion);
       for(let prop of this.productList){
         if(prop.tipo == condicion){
