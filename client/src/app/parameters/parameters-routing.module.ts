@@ -11,8 +11,8 @@ import { LoginComponent } from '../security/login/login.component';
 
 
 const routes: Routes = [
-  {
-    path: 'admin/category/creator',
+{
+      path: 'admin/category/creator',
     component: CategoryCreatorComponent,
     canActivate: [
       UrlInjectionGuard
