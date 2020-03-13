@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SolicitudModule } from './solicitud/solicitud.module';
 
 
 const routes: Routes = [
@@ -69,6 +70,7 @@ const routes: Routes = [
   ParametersModule,
   ProductRoutingModule,
   FormsModule,
+  SolicitudModule,
   NgxSpinnerModule,
   NgxPaginationModule
   
