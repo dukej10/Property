@@ -24,7 +24,7 @@ export class ProductCreatorComponent implements OnInit {
      /* los campos que se solicitan */
     return new FormGroup({ 
       name : new FormControl('', [Validators.required, Validators.minLength(5)]),
-      code: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      code: new FormControl('', [Validators.required, Validators.minLength(3)]),
       rooms: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
       bathrooms: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(2)]),
       area: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(3)]),
