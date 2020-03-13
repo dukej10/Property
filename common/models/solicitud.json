@@ -29,7 +29,12 @@
     "foto": {
       "type": "string",
       "required": true
+    },
+    "asesor": {
+      "type": "string",
+      "required": true
     }
+
   },
   "validations": [],
   "relations": {},
