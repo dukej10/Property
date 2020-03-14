@@ -7,7 +7,6 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{product.name}}<i class="material-icons right">more_vert</i></span>
-          <p><a href="">Solicitar</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{product.name}} foto 2<i class="material-icons right">close</i></span>
@@ -16,7 +15,9 @@
           </div>
 
         </div>
-      </div>  
+        
+      </div> 
+       
       <div class= "col s6">
         <h5><i class="material-icons">description</i>Descripción</h5>
         <p>{{product.description}}</p>
@@ -31,6 +32,9 @@
         <h5>Área: {{product.area}} m<sup>2</sup></h5>
         <h5>Asesor: {{product.encargado}}</h5>
         <h5>Contacto: {{product.contact}}</h5>
+        <div class="col s12">
+          <a class="waves-effect waves-light btn" (click)="saveSolicitud()"><i class="material-icons right">edit</i>Solicitar</a>
+      </div>
 
       </div>    
 </div>
