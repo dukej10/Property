@@ -109,7 +109,6 @@ export class ProductCreatorComponent implements OnInit {
   ngOnInit(): void {
     let asesorinfo = this.uService.getUserInformation();
     this.asesor = asesorinfo.realm;
-    console.log(typeof(this.asesor));
   }
 
   buildCategoryData(): PropertyModel{

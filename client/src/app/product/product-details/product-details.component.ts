@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { PropertyModel } from 'src/app/models/product.model';
 import { SolicitModel } from 'src/app/models/solicitd.model';
 import { SolicitudService } from 'src/app/services/solicitud.service';
+import { UserService } from 'src/app/services/user.service';
+import { type } from 'os';
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +15,13 @@ import { SolicitudService } from 'src/app/services/solicitud.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor(private pdtService: ProductService, private route: ActivatedRoute, private sP: SolicitudService) { }
+  client: string = "";
+  
+  constructor(private pdtService: ProductService, private route: ActivatedRoute, private sP: SolicitudService, private uService: UserService) { 
+    let asesorinfo = this.uService.getUserInformation();
+    this.client = asesorinfo.realm;
+    console.log(this.client);
+  }
 
   product: PropertyModel ={
     id: null,
@@ -56,6 +64,7 @@ export class ProductDetailsComponent implements OnInit {
   /* -----------------------   SOLICITUD ----------------- */
   solicitud: SolicitModel = {
     id: null,
+    nombre: null,
     direccion: null,
     tipo: null,
     valor: null,
@@ -67,6 +76,8 @@ export class ProductDetailsComponent implements OnInit {
 
 
   saveSolicitud(){
+    this.solicitud.nombre = this.client;
+    console.log(this.solicitud);
      this.sP.saveNewSolcitud(this.solicitud).subscribe(item => {
       alert("Su solicitud ha sido enviada");
     });
