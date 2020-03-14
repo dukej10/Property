@@ -4,6 +4,10 @@ import { SolicitudService } from 'src/app/services/solicitud.service';
 import { NgxSpinner } from 'ngx-spinner/lib/ngx-spinner.enum';
 import { NgxSpinnerService } from 'ngx-spinner';
 
+declare const showInfoSol : any;
+declare const ShowFoto : any;
+
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -17,6 +21,18 @@ export class ListComponent implements OnInit {
   productList: SolicitModel[] = [];
   condicion: string = null;
   cList: SolicitModel[] = []
+  solicitud: SolicitModel = {
+    id: null,
+
+    nombre: null,
+    direccion: null,
+    tipo: null,
+    valor: null,
+    fecha: null,
+    estado: null,
+    foto: null,
+    asesor: null
+  }
 
   showConfirmationsButtons: boolean = false;   /*  va a decir si mostrar opciones de confirmar o cancelar si se clickea Eliminar */
 
@@ -100,6 +116,23 @@ export class ListComponent implements OnInit {
     }
     
   }
+
+  ShowInfo(id){
+      this.sP.getSolcitudById(id).subscribe(item => {
+        this.solicitud = item;
+        console.log(this.solicitud);
+      showInfoSol("Cliente: " + item.nombre + "<br/>" + "Tipo: " + item.tipo + "<br/>" + "Dirección: " + item.tipo + "<br/>"
+      + "Valor: " + item.valor + "<br/>" + "Fecha: " + item.fecha + "<br/>" + "Estado: " + item.estado + "<br/>" + "Asesor: " + item.asesor + "<br/>");
+      })
+  }
+
+  /* ShowFoto(id){
+    this.sP.getSolcitudById(id).subscribe(item => {
+      this.solicitud = item;
+    ShowFoto(this.solicitud.foto);
+    })
+} */
+
 
 
 }
