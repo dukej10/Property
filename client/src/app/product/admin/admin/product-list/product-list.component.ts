@@ -49,9 +49,8 @@ export class ProductListComponent implements OnInit {
   /* Elimina la categoria al dar click en confirmación */
   deleteProduct(ProductId: string): void{
     this.pService.deleteProduct(ProductId).subscribe(item => {
-      /* deleteMessageModalP("Ha sido eliminado satisfactoriamente."); */
+      alert("Se eliminó");
       /* this.route.navigate(["/admin/product/list"]); */
-      location.reload();
     })
   }
 

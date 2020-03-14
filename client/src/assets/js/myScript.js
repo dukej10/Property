@@ -24,19 +24,36 @@ function updateMessageSol (message){
   instance.open()
 }
 
-function createdMessageProd (message){
-  let cr = document.querySelector("#saveCMessageModal");
+function editMessageProd (message){
+  let cr = document.querySelector("#editorCMessageModal");
   var instance = M.Modal.getInstance(cr);
+  document.querySelector("#strEditorCMessage").innerHTML = message;
+  instance.open()
+}
+
+function eMessageProd (message){
+  let cri = document.querySelector("#editorIMessageModal");
+  var instance = M.Modal.getInstance(cri);
+  document.querySelector("#strEditorIMessage").innerHTML = message;
+  instance.open()
+}
+
+
+function createdMessageProd (message){
+  let c = document.querySelector("#saveCMessageModal");
+  var instance = M.Modal.getInstance(c);
   document.querySelector("#strSaveCMessage").innerHTML = message;
   instance.open()
 }
 
 function cMessageProd (message){
-  let cri = document.querySelector("#saveIMessageModal");
-  var instance = M.Modal.getInstance(cri);
+  let ci = document.querySelector("#saveIMessageModal");
+  var instance = M.Modal.getInstance(ci);
   document.querySelector("#strSaveIMessage").innerHTML = message;
   instance.open()
 }
+
+
 
 /* function updateMessageProd (message){
   let uppp = document.querySelector("#modalUp");

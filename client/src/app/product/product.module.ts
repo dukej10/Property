@@ -8,6 +8,7 @@ import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
     NgxPaginationModule
   ],
   exports:[

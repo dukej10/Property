@@ -5,6 +5,10 @@ import { CategoryModel } from 'src/app/models/category.model';
 import { ProductModule } from 'src/app/product/product.module';
 import { PropertyModel } from 'src/app/models/product.model';
 
+
+declare const editMessageProd: any;
+declare const eMessageProd: any;
+
 @Component({
   selector: 'app-product-editor',
   templateUrl: './product-editor.component.html',
@@ -48,8 +52,7 @@ export class ProductEditorComponent implements OnInit {
 
   updateProduct(){
     this.pService.updateProduct(this.product).subscribe(item => {
-      alert("Se actualizó")
-      this.router.navigate(["/admin/product/list"]);
+      editMessageProd("Se actualizó la información del inmueble");
     });
   }
 
