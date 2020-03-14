@@ -74,7 +74,8 @@ export class ListComponent implements OnInit {
         }
       }
     }
-    if(condicion == "Medellin"){
+
+    if(condicion == "en estudio"){
       for(let prop of this.productList){
         if(prop.estado == condicion){
           this.cList.push(prop);
@@ -82,7 +83,7 @@ export class ListComponent implements OnInit {
       }
     }
 
-    if(condicion == "Villamaria"){
+    if(condicion == "aceptado"){
       for(let prop of this.productList){
         if(prop.estado == condicion){
           this.cList.push(prop);
@@ -90,9 +91,14 @@ export class ListComponent implements OnInit {
       }
     }
 
-
+    if(condicion == "rechazado"){
+      for(let prop of this.productList){
+        if(prop.estado == condicion){
+          this.cList.push(prop);
+        }
+      }
+    }
     
-
   }
 
 
