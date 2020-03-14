@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
+declare const createdMessageProd: any;
+
 @Component({
   selector: 'app-product-creator',
   templateUrl: './product-creator.component.html',
@@ -139,12 +141,10 @@ export class ProductCreatorComponent implements OnInit {
     console.log(this.asesor);
     if(this.productFormGroup.valid){
       this.pService.saveNewProduct(this.buildCategoryData()).subscribe(item => {
-        /* saveMessageModal("oeee"); */
-        alert("Se guardó la categoría");
-        this.route.navigate(["/admin/product/list"]);
+        createdMessageProd("Se creo el producto satisfactoriamente");
       })
     }else{
-      alert("Llene todos los campos correctamente");
+      createdMessageProd("Datos incorrectos");
     }
   }
 

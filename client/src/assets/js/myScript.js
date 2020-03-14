@@ -24,6 +24,21 @@ function updateMessageSol (message){
   instance.open()
 }
 
+function createdMessageProd (message){
+  let cr = document.querySelector("#saveCMessageModal");
+  var instance = M.Modal.getInstance(cr);
+  document.querySelector("#strSaveCMessage").innerHTML = message;
+  instance.open()
+}
+
+/* function updateMessageProd (message){
+  let uppp = document.querySelector("#modalUp");
+  var instance = M.Modal.getInstance(uppp);
+  document.querySelector("#strUpMessage").innerHTML = message;
+  instance.open()
+} */
+
+
 
 
 
