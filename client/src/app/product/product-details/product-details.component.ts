@@ -7,6 +7,8 @@ import { SolicitModel } from 'src/app/models/solicitd.model';
 import { SolicitudService } from 'src/app/services/solicitud.service';
 import { UserService } from 'src/app/services/user.service';
 
+declare const SendSol: any;
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -78,7 +80,8 @@ export class ProductDetailsComponent implements OnInit {
     this.solicitud.nombre = this.client;
     console.log(this.solicitud);
      this.sP.saveNewSolcitud(this.solicitud).subscribe(item => {
-      alert("Su solicitud ha sido enviada");
+       SendSol("Se envió solicitud exitosamente");
+      /* alert("Su solicitud ha sido enviada"); */
     });
   }
   
