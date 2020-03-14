@@ -4,6 +4,9 @@ import { SolicitudService } from 'src/app/services/solicitud.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SolicitModel } from 'src/app/models/solicitd.model';
 
+
+declare const updateMessageSol : any;
+
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
@@ -41,8 +44,9 @@ export class EditorComponent implements OnInit {
 
   updateSolicitud(){
     this.sP.updateSolcitud(this.solicitud).subscribe(item => {
-      alert("Se actualizó")
-      this.router.navigate(["/solicitud/list"]);
+      updateMessageSol("Se actualizó satisfactoriamente");
+      /* alert("Se actualizó") */
+      /* this.router.navigate(["/solicitud/list"]); */
     });
   }
  
