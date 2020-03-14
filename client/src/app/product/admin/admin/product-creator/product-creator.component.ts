@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
 declare const createdMessageProd: any;
+declare const cMessageProd: any;
 
 @Component({
   selector: 'app-product-creator',
@@ -144,7 +145,7 @@ export class ProductCreatorComponent implements OnInit {
         createdMessageProd("Se creo el producto satisfactoriamente");
       })
     }else{
-      createdMessageProd("Datos incorrectos");
+      cMessageProd("Datos incorrectos");
     }
   }
 

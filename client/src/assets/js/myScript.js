@@ -31,6 +31,13 @@ function createdMessageProd (message){
   instance.open()
 }
 
+function cMessageProd (message){
+  let cri = document.querySelector("#saveIMessageModal");
+  var instance = M.Modal.getInstance(cri);
+  document.querySelector("#strSaveIMessage").innerHTML = message;
+  instance.open()
+}
+
 /* function updateMessageProd (message){
   let uppp = document.querySelector("#modalUp");
   var instance = M.Modal.getInstance(uppp);
