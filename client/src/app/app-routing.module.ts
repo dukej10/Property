@@ -11,7 +11,7 @@ import { ContactoComponent } from './general/contacto/contacto.component';
 import { ParametersModule } from './parameters/parameters.module';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientRoutingModule } from './client/client-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -72,7 +72,8 @@ const routes: Routes = [
   FormsModule,
   SolicitudModule,
   NgxSpinnerModule,
-  NgxPaginationModule
+  NgxPaginationModule,
+  ReactiveFormsModule
   
 ],
   exports: [RouterModule]
