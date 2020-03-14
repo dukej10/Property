@@ -1,6 +1,6 @@
 export interface   SolicitModel{
     id: string;
-    dirreccion: string;
+    direccion: string;
     tipo: string;
     valor: number;
     fecha: string;
