@@ -6,7 +6,6 @@ import { PropertyModel } from 'src/app/models/product.model';
 import { SolicitModel } from 'src/app/models/solicitd.model';
 import { SolicitudService } from 'src/app/services/solicitud.service';
 import { UserService } from 'src/app/services/user.service';
-import { type } from 'os';
 
 @Component({
   selector: 'app-product-details',
