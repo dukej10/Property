@@ -17,7 +17,7 @@ export class LogoutComponent implements OnInit {
 
   logoutUser(): void{
     this.userSevice.logoutUser();
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/dir"]);
 
     
   }
