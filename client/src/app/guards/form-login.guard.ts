@@ -16,7 +16,7 @@ export class FormLoginGuard implements CanActivate {
 
   canActivate(){
     if(!isNullOrUndefined(this.uService.getUserInformation())){  /* Si se cumple, es que se ha iniciado sesión */
-      this.router.navigate(["/home"]);
+      this.router.navigate(["/dir"]);
       return false;
     }else{
       return true;
