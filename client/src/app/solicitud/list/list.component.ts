@@ -81,6 +81,8 @@ export class ListComponent implements OnInit {
     }
 
 
+    /* Filtro de búsqueda */
+
   condition(condicion){
     this.cList = [];
     if(condicion == "enviado"){
@@ -114,8 +116,25 @@ export class ListComponent implements OnInit {
         }
       }
     }
+
+    if(condicion == "Duque"){
+      for(let prop of this.productList){
+        if(prop.asesor == condicion){
+          this.cList.push(prop);
+        }
+      }
+    }
+
+      if(condicion == "Pepito"){
+        for(let prop of this.productList){
+          if(prop.asesor == condicion){
+            this.cList.push(prop);
+          }
+        }
     
   }
+}
+
 
   ShowInfo(id){
       this.sP.getSolcitudById(id).subscribe(item => {
@@ -125,6 +144,7 @@ export class ListComponent implements OnInit {
       + "Valor: " + item.valor + "<br/>" + "Fecha: " + item.fecha + "<br/>" + "Estado: " + item.estado + "<br/>" + "Asesor: " + item.asesor + "<br/>");
       })
   }
+}
 
   /* ShowFoto(id){
     this.sP.getSolcitudById(id).subscribe(item => {
@@ -134,5 +154,3 @@ export class ListComponent implements OnInit {
 } */
 
 
-
-}

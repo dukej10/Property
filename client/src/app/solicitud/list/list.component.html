@@ -425,10 +425,168 @@
                 <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
                 </div>
 
+                <div *ngIf="condicion == 'Duque'" class="">  
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Tipo
+                                </th>
+                                <th>
+                                    Dirección
+                                </th>
+                                <th>
+                                    Valor
+                                </th>
+                                <th>
+                                    Fecha
+                                </th>
+                                <th>
+                                    Estado
+                                </th>
+                                <th>
+                                    Valor ($)
+                                </th>
+                                <th>
+                                    Foto
+                                </th>
+                                <th>
+                                    Asesor
+                                </th>
+                                <th>
+                                   
+                                </th>
+                                <th>
+                    
+                                </th>
+                            </tr>
+                        </thead>
+                            <tr *ngFor="let c of cList | paginate: { itemsPerPage: 3, currentPage: cp, totalItems: total }">
+                                <td>
+                                    {{c.tipo}}
+                                </td>
+                                <td>
+                                    {{c.direccion}}
+                                </td>
+                                <td>
+                                    {{c.valor}}
+                                </td>
+                                <td>
+                                    {{c.fecha}}
+                                </td>
+                                <td>
+                                    {{c.estado}}
+                                </td>
+                                <td>
+                                    {{c.valor}}
+                                </td>
+                                <td>
+                                    <img src={{c.foto}} class= "image">
+                                </td>
+                                <!-- <td>
+                                    {{c.description}}
+                                </td> -->
+                                <td>
+                                    {{c.asesor}}
+                                </td>
+                                <td>
+                                    <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
+                                </td>
+                                    <td>
+                                        <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                                    </td>            
+                            </tr>
+                        <tbody>
+                    
+                        </tbody>
+                    </table>
+                    
+                    <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+                    </div>
+
+                    <div *ngIf="condicion == 'Pepito'" class="">  
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Tipo
+                                    </th>
+                                    <th>
+                                        Dirección
+                                    </th>
+                                    <th>
+                                        Valor
+                                    </th>
+                                    <th>
+                                        Fecha
+                                    </th>
+                                    <th>
+                                        Estado
+                                    </th>
+                                    <th>
+                                        Valor ($)
+                                    </th>
+                                    <th>
+                                        Foto
+                                    </th>
+                                    <th>
+                                        Asesor
+                                    </th>
+                                    <th>
+                                       
+                                    </th>
+                                    <th>
+                        
+                                    </th>
+                                </tr>
+                            </thead>
+                                <tr *ngFor="let c of cList | paginate: { itemsPerPage: 3, currentPage: cp, totalItems: total }">
+                                    <td>
+                                        {{c.tipo}}
+                                    </td>
+                                    <td>
+                                        {{c.direccion}}
+                                    </td>
+                                    <td>
+                                        {{c.valor}}
+                                    </td>
+                                    <td>
+                                        {{c.fecha}}
+                                    </td>
+                                    <td>
+                                        {{c.estado}}
+                                    </td>
+                                    <td>
+                                        {{c.valor}}
+                                    </td>
+                                    <td>
+                                        <img src={{c.foto}} class= "image">
+                                    </td>
+                                    <!-- <td>
+                                        {{c.description}}
+                                    </td> -->
+                                    <td>
+                                        {{c.asesor}}
+                                    </td>
+                                    <td>
+                                        <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
+                                    </td>
+                                        <td>
+                                            <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                                        </td>            
+                                </tr>
+                            <tbody>
+                        
+                            </tbody>
+                        </table>
+                        
+                        <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+                        </div>
+
     <!-- Modal Structure -->
   <div id="modalInfo" class="modal">
     <div class="modal-content">
-      <h4>Inmobiliaria</h4>
+      <h4>Inmobiliaria Mchaileh</h4>
       <h6>Inofrmación solicitud</h6>
       <p id = "strInfoMessage"></p>
     </div>

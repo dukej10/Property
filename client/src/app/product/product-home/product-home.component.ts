@@ -19,6 +19,8 @@ export class ProductHomeComponent implements OnInit {
 
     condicion: string = null;
 
+
+  /* Filtro de búsqueda */
   condition(condicion){
     this.cList = [];
     if(condicion == "venta"){

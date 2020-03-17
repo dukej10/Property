@@ -95,8 +95,8 @@ export class RegisterComponent implements OnInit {
     if(this.categoryFormGroup.valid){
       this.userService.registerUser(this.buildUserData()).subscribe(item => {
         /* saveMessageModal("oeee"); */
-        alert("Se guardó la categoría");
-        this.router.navigate(["/admin/category/list"]);
+        alert("Se ha creado client");
+        this.router.navigate(["/product/home"]);
       });
     }else{
       alert("Llene todos los campos correctamente");

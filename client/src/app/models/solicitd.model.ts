@@ -1,6 +1,6 @@
 export interface   SolicitModel{
     id: string;
-    nombre: string;
+    nombre : string;
     direccion: string;
     tipo: string;
     valor: number;
