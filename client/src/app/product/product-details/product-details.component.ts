@@ -56,7 +56,7 @@ export class ProductDetailsComponent implements OnInit {
       this.solicitud.direccion= this.product.address;
       this.solicitud.tipo= this.product.tipo;
       this.solicitud.valor= this.product.price;
-      this.solicitud.fecha= "oe";
+      this.solicitud.fecha= "fecha";
       this.solicitud.estado= "enviado";
       this.solicitud.foto= this.product.image;
       this.solicitud.asesor= this.product.encargado;
