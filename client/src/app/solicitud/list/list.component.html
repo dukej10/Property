@@ -80,7 +80,7 @@
                 <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
             </td>
                 <td *ngIf="c.estado != 'enviado'">
-                    <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                    <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">info</i>Info</a>
                 </td>
                 <td *ngIf="c.estado == 'enviado'">
                     <a *ngIf="!showConfirmationsButtons; else deleteConfirmation" (click)="ChangeConfirmationButtons(c.id)" class="waves-effect waves-light btn red"><i class="material-icons right">delete</i>Eliminar</a>
@@ -254,7 +254,7 @@
                         <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
                     </td>
                     <td>
-                        <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                        <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">info</i>Info</a>
                     </td>            
                 </tr>
             <tbody>
@@ -334,7 +334,7 @@
                             <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
                         </td>
                             <td>
-                                <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                                <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">info</i>Info</a>
                             </td>           
                     </tr>
                 <tbody>
@@ -414,7 +414,7 @@
                                 <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
                             </td>
                                 <td>
-                                    <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                                    <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">info</i>Info</a>
                                 </td>            
                         </tr>
                     <tbody>
@@ -493,7 +493,7 @@
                                     <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
                                 </td>
                                     <td>
-                                        <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                                        <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">info</i>Info</a>
                                     </td>            
                             </tr>
                         <tbody>
@@ -572,7 +572,7 @@
                                         <a class="waves-effect waves-light btn blue" href="/solicitud/editor/{{c.id}}"><i class="material-icons right">edit</i>Editar</a>
                                     </td>
                                         <td>
-                                            <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">delete</i>Info</a>
+                                            <a  (click)="ShowInfo(c.id)" class="waves-effect waves-light btn yellow"><i class="material-icons right">info</i>Info</a>
                                         </td>            
                                 </tr>
                             <tbody>
